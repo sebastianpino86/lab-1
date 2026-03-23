@@ -43,6 +43,11 @@ Al finalizar retorna la lista creada.
 
 List* crea_lista() {
    List* L = create_list();
+   for (int i = 0; i < 11 ; i++){
+      int* numero = (int*)malloc(sizeof(int));
+      *numero = i;
+      pushBack(L,numero);
+   }
    return L;
 }
 
@@ -52,7 +57,13 @@ Crea una función que reciba una lista de enteros (int*) y
 retorne la suma de sus elementos.
 */
 int sumaLista(List *L) {
-   return 0;
+   int* aux = first(L);
+   int sumatoria = 0;
+   while(aux != NULL){
+      sumatoria += *aux;
+      aux = next(L);
+   }
+   return sumatoria;
 }
 
 /*
@@ -65,7 +76,13 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-
+   int* aux = first(L);
+   while(aux != NULL){
+      if (*aux == elem){
+         popCurrent(L);
+      }
+      aux = next(L);
+   }
 }
 
 /*
@@ -76,6 +93,20 @@ Puedes usar una pila auxiliar.
 */
 
 void copia_pila(Stack* P1, Stack* P2) {
+   Stack* pila = create_stack();
+   void* aux = top(P1);
+   while (aux != NULL){
+      push(pila,aux);
+      pop(P1);
+      aux = top(P1);
+   }
+   void* aux2 = top(pila);
+   while (aux2 != NULL){
+      push(P1,aux2);
+      push(P2,aux2);
+      pop(pila);
+      aux2 = top(pila);
+   }
 }
 
 /*
@@ -86,6 +117,19 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 */
 
 int parentesisBalanceados(char *cadena) {
-   return 0;
+   Stack* pila = create_stack();
+   for (int i = 0; cadena[i] != '\0'; i++){
+      if (cadena[i] == '(' || cadena[i] == '{' || cadena[i] == '['){
+         push(pila,&cadena[i]);
+      }
+      else if (cadena[i] == ')' || cadena[i] == '}' || cadena[i] == ']'){
+         if (top(pila) == NULL)return 0;
+         char inicio = *(char*)top(pila);
+         if ((cadena[i] == '(' && inicio != ')' ) || (cadena[i] == '}' && inicio != '{') || (cadena[i] == ']' && inicio != '['))return 0;
+         pop(pila);
+      }
+   }
+   if (top(pila) != NULL)return 0;
+   return 1;
 }
 

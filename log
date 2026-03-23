@@ -1,0 +1,91 @@
+Fri Mar 20 05:45:57 PM UTC 2026: 
+ exercises.c | 12 ++++++++++++
+ 1 file changed, 12 insertions(+)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:79:18: error: implicit declaration of function ‘create_Stack’; did you mean ‘create_stack’? [-Wimplicit-function-declaration]
+   79 |    Stack* pila = create_Stack();
+      |                  ^~~~~~~~~~~~
+      |                  create_stack
+exercises.c:79:18: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+e901c0d
+Fri Mar 20 05:54:51 PM UTC 2026: 
+ exercises.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+ tests:  1|4
+total_score: 10/70
+d7c66b3
+Sat Mar 21 08:33:07 PM UTC 2026: 
+ exercises.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘crea_lista’:
+exercises.c:49:7: error: implicit declaration of function ‘pushback’; did you mean ‘pushBack’? [-Wimplicit-function-declaration]
+   49 |       pushback(L,numero);
+      |       ^~~~~~~~
+      |       pushBack
+70e0575
+Sat Mar 21 08:33:26 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  2|3
+total_score: 20/70
+0fc881b
+Sat Mar 21 08:36:19 PM UTC 2026: 
+ exercises.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+ tests:  3|2
+total_score: 30/70
+840ad96
+Sat Mar 21 08:40:18 PM UTC 2026: 
+ exercises.c | 8 +++++++-
+ 1 file changed, 7 insertions(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+d4fbc82
+Sat Mar 21 09:01:45 PM UTC 2026: 
+ exercises.c | 15 ++++++++++++++-
+ 1 file changed, 14 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:120:18: error: implicit declaration of function ‘create_Stack’; did you mean ‘create_stack’? [-Wimplicit-function-declaration]
+  120 |    Stack* pila = create_Stack();
+      |                  ^~~~~~~~~~~~
+      |                  create_stack
+exercises.c:120:18: error: initialization of ‘Stack *’ {aka ‘List *’} from ‘int’ makes pointer from integer without a cast [-Wint-conversion]
+exercises.c:127:24: error: cast from pointer to integer of different size [-Werror=pointer-to-int-cast]
+  127 |          char inicio = (char)top(pila);
+      |                        ^
+cc1: all warnings being treated as errors
+b7d52c5
+Sat Mar 21 09:02:14 PM UTC 2026: 
+ exercises.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+exercises.c: In function ‘parentesisBalanceados’:
+exercises.c:127:24: error: initialization of ‘char’ from ‘char *’ makes integer from pointer without a cast [-Wint-conversion]
+  127 |          char inicio = (char*)top(pila);
+      |                        ^
+8bbf177
+Sat Mar 21 09:02:34 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+1dc7bec
+Sat Mar 21 09:06:07 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  4|1
+total_score: 50/70
+e46143d
+Sat Mar 21 09:07:09 PM UTC 2026: 
+ exercises.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  9|0
+total_score: 70/70
+27496dc
